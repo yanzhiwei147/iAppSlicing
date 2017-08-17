@@ -1,0 +1,60 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach",
+            "port": 5858
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceRoot}/bin/slicingapp.js",
+            "args": [
+                "./test/origin.ipa"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program(not-extension)",
+            "program": "${workspaceRoot}/bin/slicingapp.js",
+            "args": [
+                "./test/origin_no_extension.ipa"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program(has-extension)",
+            "program": "${workspaceRoot}/bin/slicingapp.js",
+            "args": [
+                "./test/origin_extension.ipa"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program With Version",
+            "program": "${workspaceRoot}/bin/slicingapp.js",
+            "args": [
+                "--version"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program With Help",
+            "program": "${workspaceRoot}/bin/slicingapp.js",
+            "args": [
+                "-h"
+            ]
+        }
+    ]
+}
