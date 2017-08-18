@@ -32,6 +32,17 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Launch Program(not-extension, output)",
+            "program": "${workspaceRoot}/bin/slicingapp.js",
+            "args": [
+                "-o",
+                "dst",
+                "./test/origin_no_extension.ipa"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Launch Program(has-extension)",
             "program": "${workspaceRoot}/bin/slicingapp.js",
             "args": [

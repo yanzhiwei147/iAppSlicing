@@ -2,12 +2,14 @@
 'use strict';
 
 const packageJson = require('../package.json');
-const colors = require('colors');
-const SlicingApp = require('../lib/tools.js');
+const tools = require('../lib/tools.js');
 const conf = require('minimist')(process.argv.slice(2), {
   boolean: [
   ]
 });
+
+const SlicingApp = tools.SlicingApp;
+const colors = tools.colors;
 
 const options = {
   file: conf._[0] || 'undefined',
@@ -16,12 +18,6 @@ const options = {
   mobileprovision: conf.mobileprovision || conf.m,
   keychain: conf.keychain || conf.k
 };
-
-colors.setTheme({
-  error: 'red',
-  warn: 'green',
-  msg: 'yellow'
-});
 
 const sa = new SlicingApp(options);
 if (conf.version) {
@@ -33,24 +29,22 @@ if (conf.version) {
 
   ${cmd} [--options ...] [input-ipafile]
 
-  -i, --identity [iPhone Distribution:xxx]    Specify Common name to use
   -k, --keychain [KEYCHAIN]                   Specify alternative keychain file
-  -m, --mobileprovision [FILE]                Specify the mobileprovision file to use
   -o, --output [output directory]             Directory to the output IPA files
       --version                               Show SlicingApp version
   [input-ipafile]                             Path to the IPA file to slice
 
 Example:
 
-  ${cmd} -i "iPhone Distribution:xxx" -k ~/Library/Keychains/login.keychain test-app.ipa
+  ${cmd} -k ~/Library/Keychains/login.keychain test-app.ipa
 `);
 } else {
   console.log(colors.msg("Begin slicing..."));
-  sa.resign( (error, data) => {
+  sa.slicing( (error, data) => {
     if (error) {
       console.error(error, data);
     }
-    console.log(colors.msg("Finish slicing..."));
+    console.log(colors.msg("Finish slicing"));
 
   }).on('message', (msg) => {
     console.log(colors.msg(msg));
