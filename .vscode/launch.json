@@ -52,6 +52,15 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Launch Program(large)",
+            "program": "${workspaceRoot}/bin/slicingapp.js",
+            "args": [
+                "./test/origin_large.ipa"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Launch Program With Version",
             "program": "${workspaceRoot}/bin/slicingapp.js",
             "args": [
