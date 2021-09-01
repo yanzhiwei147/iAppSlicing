@@ -30,7 +30,7 @@
         "decompress": "^4.2.0",
         "find": "^0.2.7",
         "fs-extra": "^1.0.0",
-        "minimist": "1.2.0",
+        "minimist": "1.2.3",
         "plist": "^2.1.0",
         "zip-local": "^0.3.4"
     }
