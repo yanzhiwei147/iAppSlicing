@@ -1,6 +1,6 @@
 {
     "name": "slicingapp",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "description": "The tool for slicing iOS app.",
     "main": "bin/slicingapp.js",
     "bin": {
@@ -30,8 +30,10 @@
         "decompress": "^4.2.0",
         "find": "^0.2.7",
         "fs-extra": "^1.0.0",
-        "minimist": "1.2.0",
-        "plist": "^2.1.0",
-        "zip-local": "^0.3.4"
+        "minimist": "1.2.5",
+        "plist": "^3.0.4",
+        "xmldom": "^0.6.0",
+        "zip-local": "^0.3.4",
+        "jszip": "^3.7.0"
     }
 }
